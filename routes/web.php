@@ -5,6 +5,7 @@ use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GuestController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CategoryController;
@@ -12,7 +13,7 @@ use App\Http\Controllers\KosController;
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [AuthController::class, 'index']);
+Route::get('/', [GuestController::class, 'index']);
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/auth', [AuthController::class, 'auth']);
 Route::get('/logout', [AuthController::class, 'logout']);
@@ -24,7 +25,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/settings', [SettingsController::class, 'showSettingsForm'])->name('settings.form');
 Route::post('/settings', [SettingsController::class, 'saveSettings'])->name('settings.save');
 Route::get('/convert-and-store-timestamp', [SettingsController::class, ' convertAndStoreTimestamp'])->name('settings.convert');
-
 
 Route::get('pelanggan', [PelangganController::class, 'index'])->name('pelanggan.list');
 Route::get('pelanggan/show/{id}', [PelangganController::class, 'show'])->name('pelanggan.show');
