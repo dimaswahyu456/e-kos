@@ -49,15 +49,14 @@ class PaymentController extends Controller
     {
         $this->validate($request, [
             'kode_payment' => 'required',
-            'nama_payment' => 'required',
-            'status' => 'required'
+            'nama_payment' => 'required'
         ]);
 
         try {
             DB::table('tbl_payments')->insert([
                 'kode_payment' => $this->generatePaymentCode(),
                 'nama_payment' => $request->nama_payment,
-                'status' => $request->status,
+                'status' => 1,
                 'created_at' => now(),
                 'updated_at' => now()
             ]);

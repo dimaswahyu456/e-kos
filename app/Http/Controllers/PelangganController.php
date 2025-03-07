@@ -48,8 +48,7 @@ class PelangganController extends Controller
             'alamat' => 'required',
             'jenis_kelamin' => 'required',
             'tgl_masuk' => 'required',
-            'id_kos' => 'required',
-            'status' => 'required'
+            'id_kos' => 'required'
         ]);
 
         try {
@@ -61,7 +60,7 @@ class PelangganController extends Controller
                 'jenis_kelamin' => $request->jenis_kelamin,
                 'tgl_masuk' => $request->tgl_masuk,
                 'id_kos' => $request->id_kos,
-                'status' => $request->status,
+                'status' => 1,
                 'created_at' => now(),
                 'updated_at' => now()
             ]);

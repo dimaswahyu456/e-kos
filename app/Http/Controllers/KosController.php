@@ -52,7 +52,6 @@ class KosController extends Controller
             'price' => 'required',
             'alamat' => 'required',
             'id_category' => 'required',
-            'status' => 'required',
             'image' => 'required',
             'keterangan' => 'required'
         ]);
@@ -64,7 +63,7 @@ class KosController extends Controller
                 'price' => $request->price,
                 'alamat' => $request->alamat,
                 'id_category' => $request->id_category,
-                'status' => $request->status,
+                'status' => 1,
                 'image' => $request->image,
                 'keterangan' => $request->keterangan,
                 'created_at' => now(),

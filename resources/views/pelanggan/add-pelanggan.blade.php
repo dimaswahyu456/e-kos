@@ -65,37 +65,13 @@
                 <input class="form-control" type="text" name="alamat" value="{{ old('alamat') }}" id="example-text-input" placeholder="Alamat">
               </div>
               <br><br>
-              <label for="example-text-input" class="col-md-2 col-form-label">Tanggal Pemasangan : </label>
+              <label for="example-text-input" class="col-md-2 col-form-label">Tanggal Masuk : </label>
               <div class="col-md-10">
                 <div class="input-group" id="datepicker1">
-                  <input type="text" class="form-control" placeholder="yyyy-mm-dd" data-date-format="yyyy-mm-dd" data-date-container='#datepicker1' data-provide="datepicker" name="tgl_psb">
+                  <input type="text" class="form-control" placeholder="yyyy-mm-dd" data-date-format="yyyy-mm-dd" data-date-container='#datepicker1' data-provide="datepicker" name="tgl_masuk">
                   <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
                 </div>
               </div>
-              <br><br>
-              <label for="example-text-input" class="col-md-2 col-form-label">Layanan : </label>
-              <div class="col-md-10">
-                <select name="layanan" id="userSelectCategory" class="form-select" aria-label="Floating label select">
-                  @foreach ($res_layanan as $item)
-                  <option value="{{$item->id}}">{{$item->nama_layanan}}</option>
-                  @endforeach
-                </select>
-              </div>
-              <br><br>
-              <label for="example-text-input" class="col-md-2 col-form-label">Jumlah Device : </label>
-              <div class="col-md-10">
-                <input class="form-control" type="text" name="jumlah_device" value="{{ old('jumlah_device') }}" id="example-text-input" placeholder="Jumlah Device">
-              </div>
-              <br><br>
-              <label for="example-text-input" class="col-md-2 col-form-label">Status : </label>
-              <div class="col-md-10">
-                <select name="status" id="userSelectCategory" class="form-select" aria-label="Floating label select">
-                  @foreach ($res_status as $item)
-                  <option value="{{$item->id}}">{{$item->status}}</option>
-                  @endforeach
-                </select>
-              </div>
-
             </div>
             <div class="pull-right">
               <a class="btn btn-primary" href="{{ route('pelanggan.list') }}"> Back</a>

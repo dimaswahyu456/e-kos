@@ -63,15 +63,6 @@
               </select>
             </div>
             <br><br>
-            <label for="example-text-input" class="col-md-2 col-form-label">Status : </label>
-            <div class="col-md-10">
-              <select name="status" id="userSelectCategory" class="form-select" aria-label="Floating label select">
-                @foreach ($res_status as $item)
-                <option value="{{$item->id}}">{{$item->status}}</option>
-                @endforeach
-              </select>
-            </div>
-            <br><br>
             <label for="example-text-input" class="col-md-2 col-form-label">Image : </label>
             <div class="col-md-10">
               <input class="form-control" type="file" name="image" id="image" accept="image/*" onchange="validateFileSize(this)">

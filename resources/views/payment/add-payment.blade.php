@@ -43,15 +43,6 @@
             <div class="col-md-10">
               <input class="form-control" type="text" name="nama_payment" value="{{ old('nama_payment') }}" id="example-text-input" placeholder="Nama Payment">
             </div>
-            <br><br>
-            <label for="example-text-input" class="col-md-2 col-form-label">Status : </label>
-            <div class="col-md-10">
-              <select name="status" id="userSelectCategory" class="form-select" aria-label="Floating label select">
-                @foreach ($res_status as $item)
-                <option value="{{$item->id}}">{{$item->status}}</option>
-                @endforeach
-              </select>
-            </div>
           </div>
           <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('payment.list') }}"> Back</a>

@@ -95,13 +95,13 @@
 
           <div class="col-lg-6 content " data-aos="fade-up" data-aos-delay="100 ">
             <p align="justify">
-              Kost Bapak Rudi adalah sebuah hunian yang dirancang untuk menyediakan kenyamanan dan kemudahan bagi penyewa, baik mahasiswa, pekerja, maupun individu lainnya yang membutuhkan tempat tinggal sementara. Terletak di lokasi strategis, Kost Bapak Rudi menawarkan akses mudah ke berbagai fasilitas umum seperti kampus, perkantoran, pusat perbelanjaan, dan transportasi umum.      
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto doloribus ullam cumque, quo veniam reprehenderit voluptatem debitis, velit et possimus fuga architecto in harum! Quod optio sint architecto ipsam laboriosam!      
             </p>
           </div>
 
           <div class="col-lg-6 " data-aos="fade-up " data-aos-delay="200 ">
-            <p align="justify">Kost Bapak Rudi berkomitmen untuk memberikan hunian yang nyaman, aman, dan terjangkau bagi setiap penyewa. Dengan sistem modern yang digunakan, pengelolaan kost menjadi lebih terorganisir dan transparan. </p>
-            <a target="_blank" href="https://wa.me/6287877119922 " class="read-more "><span>Cek Ketersediaan Kamar</span><i class="bi bi-arrow-right "></i></a>
+            <p align="justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet commodi provident voluptates, eaque, delectus maxime iusto deleniti sapiente in eius laborum fugiat porro nihil! Velit laboriosam ab iusto aliquam fuga? Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, quo in! Ipsam exercitationem id corrupti nobis molestias totam cumque, quod voluptatibus perspiciatis iste corporis qui optio est commodi quia! Esse! </p>
+            <a target="_blank" href="https://wa.me/+62821313633323 " class="read-more "><span>Cek Ketersediaan Kamar</span><i class="bi bi-arrow-right "></i></a>
           </div>
 
         </div>
@@ -113,7 +113,7 @@
     <!-- Keunggulan Section -->
 <section id="keunggulan" class="services section light-background">
   <div class="container section-title text-center" data-aos="fade-up">
-    <h2>Mengapa Kost Pak Rudi?</h2>
+    <h2>Mengapa Kost Pak Arifin?</h2>
     <p>Kost kami memiliki beberapa fasilitas yang menarik yaitu</p>
   </div>
 
@@ -327,7 +327,7 @@
                 <i class="faq-icon bi bi-question-circle "></i>
                 <h3>Apakah untuk listrik menggunakan token?</h3>
                 <div class="faq-content ">
-                  <p>Tidak, Kost Bapak Rudi tidak menggunakan sistem listrik berbasis token. Biaya listrik sudah termasuk dalam biaya sewa bulanan, sehingga penghuni tidak perlu membeli token listrik secara terpisah. Sistem ini memberikan kenyamanan lebih bagi para penyewa karena listrik tersedia secara langsung tanpa perlu khawatir kehabisan saldo token.</p>
+                  <p>Tidak, Kost Bapak Arifin tidak menggunakan sistem listrik berbasis token. Biaya listrik sudah termasuk dalam biaya sewa bulanan, sehingga penghuni tidak perlu membeli token listrik secara terpisah. Sistem ini memberikan kenyamanan lebih bagi para penyewa karena listrik tersedia secara langsung tanpa perlu khawatir kehabisan saldo token.</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right "></i>
               </div><!-- End Faq item-->
@@ -336,7 +336,7 @@
                 <i class="faq-icon bi bi-question-circle "></i>
                 <h3>Apakah ada fasilitas kulkas?</h3>
                 <div class="faq-content ">
-                  <p>Tentu saja, di Kost Bapak Rudi kami menyediakan fasilitas kulkas yang dapat digunakan oleh seluruh penghuni. Kulkas ini tersedia di area dapur bersama dan dapat digunakan untuk menyimpan makanan, minuman, atau kebutuhan lainnya. Kami juga memastikan kebersihan dan perawatan kulkas secara berkala demi kenyamanan semua penghuni. Jika Anda memiliki kebutuhan spesifik terkait penggunaan kulkas, jangan ragu untuk menghubungi pengelola.</p>
+                  <p>Tentu saja, di Kost Bapak Arifin kami menyediakan fasilitas kulkas yang dapat digunakan oleh seluruh penghuni. Kulkas ini tersedia di area dapur bersama dan dapat digunakan untuk menyimpan makanan, minuman, atau kebutuhan lainnya. Kami juga memastikan kebersihan dan perawatan kulkas secara berkala demi kenyamanan semua penghuni. Jika Anda memiliki kebutuhan spesifik terkait penggunaan kulkas, jangan ragu untuk menghubungi pengelola.</p>
         </div>
         <i class="faq-toggle bi bi-chevron-right "></i>
         </div>
@@ -344,9 +344,9 @@
 
         <div class="faq-item " data-aos="fade-up " data-aos-delay="500 ">
             <i class="faq-icon bi bi-question-circle "></i>
-            <h3>Apakah Kost Bapak Rudi memiliki sistem keamanan seperti CCTV?</h3>
+            <h3>Apakah Kost Bapak Arifin memiliki sistem keamanan seperti CCTV?</h3>
             <div class="faq-content ">
-                <p>Ya, Kost Bapak Rudi telah dilengkapi dengan sistem keamanan berupa CCTV. Kamera CCTV ini aktif selama 24 jam dan dipasang di area strategis seperti pintu masuk. Sistem ini dirancang untuk memastikan keamanan dan kenyamanan para penghuni.</p>
+                <p>Ya, Kost Bapak Arifin telah dilengkapi dengan sistem keamanan berupa CCTV. Kamera CCTV ini aktif selama 24 jam dan dipasang di area strategis seperti pintu masuk. Sistem ini dirancang untuk memastikan keamanan dan kenyamanan para penghuni.</p>
             </div>
             <i class="faq-toggle bi bi-chevron-right "></i>
         </div>
@@ -356,7 +356,7 @@
             <i class="faq-icon bi bi-question-circle "></i>
             <h3>Apakah tersedia perawatan kebersihan kamar?</h3>
             <div class="faq-content ">
-                <p>Ya, Kost Bapak Rudi menyediakan layanan perawatan kebersihan kamar dalam situasi tertentu. Kamar kos akan dibersihkan jika:<br><br>
+                <p>Ya, Kost Bapak Arifin menyediakan layanan perawatan kebersihan kamar dalam situasi tertentu. Kamar kos akan dibersihkan jika:<br><br>
                   1. Kamar kos sedang ditinggal pergi oleh penyewa dalam jangka waktu tertentu.<br>
                   2. Kamar kos dalam kondisi kosong dan belum ditempati oleh penyewa baru.<br><br>
                   Selain itu, tempat sampah di depan kamar kos juga akan dibersihkan secara rutin apabila penuh, sehingga kebersihan lingkungan kos tetap terjaga.
@@ -368,7 +368,7 @@
             <i class="faq-icon bi bi-question-circle "></i>
             <h3>Apakah tersedia fasilitas dapur bersama?</h3>
             <div class="faq-content ">
-                <p> Ya, Kost Bapak Rudi menyediakan dapur bersama yang dapat digunakan oleh seluruh penyewa. Dapur dilengkapi dengan kompor gas, wastafel, dan peralatan masak dasar. Penyewa diharapkan menjaga kebersihan setelah menggunakan dapur.
+                <p> Ya, Kost Bapak Arifin menyediakan dapur bersama yang dapat digunakan oleh seluruh penyewa. Dapur dilengkapi dengan kompor gas, wastafel, dan peralatan masak dasar. Penyewa diharapkan menjaga kebersihan setelah menggunakan dapur.
                 </p>
             </div>
             <i class="faq-toggle bi bi-chevron-right "></i>
@@ -507,7 +507,7 @@
 
 
         <!-- Scroll Top -->
-        <a target="_blank " href="http://wa.me/+6287877119922 " target="_blank " class="scroll-top d-flex align-items-center justify-content-center "><i class="bi bi-whatsapp "></i></a>
+        <a target="_blank " href="http://wa.me/+62821313633323" target="_blank " class="scroll-top d-flex align-items-center justify-content-center "><i class="bi bi-whatsapp "></i></a>
 
         <!-- Preloader -->
         <div id="preloader "></div>
