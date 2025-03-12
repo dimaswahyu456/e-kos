@@ -9,8 +9,8 @@
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ URL::asset('/assets/images/logo-kos.png') }}" rel="icon">
+    <link href="{{ URL::asset('/assets/images/logo-kos.png') }}" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -50,6 +50,7 @@
           <li><a href="#about">Tentang Kost</a></li>
           <li><a href="#keunggulan">Keunggulan</a></li>
           <li><a href="#kamar">Kamar</a></li>
+          <li><a href="{{ url('/login') }}">Login</a></li>
           <!-- <li><a href="#contact ">Contact</a></li> -->
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list "></i>
@@ -182,7 +183,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="{{ URL::asset('/assets/guest/img//dapur.jpg')}}" class="img-fluid" alt="Dapur Umum">
+            <img src="{{ URL::asset('/assets/guest/img/dapur.jpg')}}" class="img-fluid" alt="Dapur Umum">
           </div>
         </div>
       </div>
@@ -244,7 +245,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="{{ URL::asset('/assets/guest/img//penjemuran.jpg')}}" class="img-fluid" alt="Tempat Penjemuran">
+            <img src="{{ URL::asset('/assets/guest/img/penjemuran.jpg')}}" class="img-fluid" alt="Tempat Penjemuran">
           </div>
         </div>
       </div>

@@ -65,34 +65,24 @@
                 <input class="form-control" type="text" name="alamat" value="{{ $find->alamat }}" id="example-text-input" placeholder="Alamat">
               </div>
               <br><br>
-              <label for="example-text-input" class="col-md-2 col-form-label">Layanan : </label>
+              <label for="example-text-input" class="col-md-2 col-form-label">Tanggal Masuk :</label>
               <div class="col-md-10">
-                <select name="layanan" id="userSelectCategory" class="form-select" aria-label="Floating label select">
-                  @foreach ($res_layanan as $item)
-                  @if ($find->layanan == $item->id)
-                  <option value="{{$item->id}}" selected>{{$item->nama_layanan}}</option>
+                <input class="form-control" type="date" name="tgl_masuk" value="{{ old('tgl_masuk') }}" id="example-date-input" placeholder="" required>
+              </div>
+              <br><br>
+              <label for="example-text-input" class="col-md-2 col-form-label">Kos : </label>
+              <div class="col-md-10">
+                <select name="kos" id="userSelectCategory" class="form-select" aria-label="Floating label select">
+                  @foreach ($res_kos as $item)
+                  @if ($find->kos == $item->id)
+                  <option value="{{$item->id}}" selected>{{$item->nama_kos}}</option>
                   @else
-                  <option value="{{$item->id}}">{{$item->nama_layanan}}</option>
+                  <option value="{{$item->id}}">{{$item->nama_kos}}</option>
                   @endif
                   @endforeach
                 </select>
               </div>
-              <label for="example-text-input" class="col-md-2 col-form-label">Tanggal Pemasangan :</label>
-              <div class="col-md-10">
-                  <div class="input-group date" id="datepicker1" data-target-input="nearest">
-                      <input type="text" class="form-control datetimepicker-input" data-target="#datepicker1" name="tgl_psb" value="{{ $find->tgl_psb }}" />
-                      <div class="input-group-append" data-target="#datepicker1" data-toggle="datetimepicker">
-                          <div class="input-group-text"><i class="mdi mdi-calendar"></i></div>
-                      </div>
-                  </div>
-              </div>
-
-              <label for="example-text-input" class="col-md-2 col-form-label">Jumlah Device : </label>
-              <div class="col-md-10">
-                <input class="form-control" type="text" name="jumlah_device" value="{{ $find->jumlah_device }}" id="example-text-input" placeholder="Jumlah Device">
-              </div>
               <br><br>
-
               <label for="example-text-input" class="col-md-2 col-form-label">Status : </label>
               <div class="col-md-10">
                 <select name="status" id="userSelectCategory" class="form-select" aria-label="Floating label select">

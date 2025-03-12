@@ -11,10 +11,10 @@
                 <div class="text-center">
                     <a href="{{ route('login') }}" class="mb-5 d-block auth-logo">
                         <span class="logo logo-dark">
-                            <center><img src="{{ URL::asset('/assets/images/logolight.png') }}" alt="" height="100"></center>
+                            <center><img src="{{ URL::asset('/assets/images/logo-kos.png') }}" alt="" height="100"></center>
                         </span>
                         <span class="logo logo-light">
-                            <center><img src="{{ URL::asset('/assets/images/logolight.png') }}" alt="" height="85"></center>
+                            <center><img src="{{ URL::asset('/assets/images/logo-kos.png') }}" alt="" height="85"></center>
                         </span>
                     </a>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="card-body p-4">
                         <div class="text-center mt-2">
                             
-                            <h5 class="text-primary">E-Tagihan Sadayana Net</h5>
+                            <h5 class="text-primary">Welcome to E-Kos</h5>
                             <p class="text-muted"></p>
                         </div>
                         <div class="p-2 mt-4">

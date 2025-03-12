@@ -52,19 +52,28 @@ class KosController extends Controller
             'price' => 'required',
             'alamat' => 'required',
             'id_category' => 'required',
-            'image' => 'required',
-            'keterangan' => 'required'
+            'keterangan' => 'required',
+            'image' => 'nullable|file|image|mimes:png,jpg,jpeg|max:2048'
         ]);
 
         try {
+            $kodeKos = $this->generateKosCode();
+            $imageName = null;
+
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $imageName = uniqid() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('kos-images/' . $kodeKos), $imageName);
+            }
+
             DB::table('tbl_kos')->insert([
-                'kodekos' => $this->generateKosCode(),
+                'kodekos' => $kodeKos,
                 'nama_kos' => $request->nama_kos,
                 'price' => $request->price,
                 'alamat' => $request->alamat,
                 'id_category' => $request->id_category,
                 'status' => 1,
-                'image' => $request->image,
+                'image' => $imageName,
                 'keterangan' => $request->keterangan,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -72,22 +81,18 @@ class KosController extends Controller
 
             return redirect()
                 ->route('kos.list')
-                ->with([
-                    'success' => 'New post has been created successfully'
-                ]);
+                ->with(['success' => 'New post has been created successfully']);
         } catch (\Exception $e) {
             return redirect()
                 ->back()
                 ->withInput()
-                ->with([
-                    'error' => 'Some problem occurred, please try again'
-                ]);
+                ->with(['error' => 'Some problem occurred, please try again']);
         }
     }
 
     private function generateKosCode()
     {
-        $latestKos = Kos::latest('kodekos')->first();
+        $latestKos = DB::table('tbl_kos')->latest('kodekos')->first();
 
         if (!$latestKos) {
             return 'KOS001';
@@ -99,13 +104,6 @@ class KosController extends Controller
         return 'KOS' . str_pad($newNumber, 3, '0', STR_PAD_LEFT);
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $res_find = DB::select('select * from tbl_kos where id=' . $id);
@@ -115,12 +113,6 @@ class KosController extends Controller
         return view('kos.show-kos', compact('find', 'res_category', 'res_status'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $res_find = DB::select('select * from tbl_kos where id=' . $id);
@@ -146,28 +138,60 @@ class KosController extends Controller
             'alamat' => 'required',
             'id_category' => 'required',
             'status' => 'required',
-            'image' => 'required',
+            'image' => 'nullable|file|image|mimes:png,jpg,jpeg|max:2048',
             'keterangan' => 'required'
         ]);
 
-        $resupdate = DB::update('UPDATE tbl_kos
-        SET kodekos="' . $request->kodekos . '",nama_kos="' . $request->nama_kos . '",price="' . $request->price . '",keterangan="' . '",alamat="' . $request->alamat . '",id_category="' . $request->id_category . '",status="' . $request->status . '",image="' . $request->image . $request->keterangan . '",updated_at="' . now() . '" WHERE id=' . $id . '; ');
+        try {
+            $kos = DB::table('tbl_kos')->where('id', $id)->first();
+            if (!$kos) {
+                return redirect()->back()->with(['error' => 'Data tidak ditemukan!']);
+            }
 
-        if ($resupdate) {
+            $kodeKos = $request->kodekos;
+            $imageName = $kos->image;
+
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $imageName = uniqid() . '.' . $file->getClientOriginalExtension();
+                $folderPath = public_path('kos-images/' . $kodeKos);
+
+                if ($kos->image && file_exists($folderPath . '/' . $kos->image)) {
+                    unlink($folderPath . '/' . $kos->image);
+                }
+
+                if (!file_exists($folderPath)) {
+                    mkdir($folderPath, 0777, true);
+                }
+
+                $file->move($folderPath, $imageName);
+            }
+
+            DB::table('tbl_kos')
+                ->where('id', $id)
+                ->update([
+                    'kodekos' => $kodeKos,
+                    'nama_kos' => $request->nama_kos,
+                    'price' => $request->price,
+                    'alamat' => $request->alamat,
+                    'id_category' => $request->id_category,
+                    'status' => $request->status,
+                    'image' => $imageName,
+                    'keterangan' => $request->keterangan,
+                    'updated_at' => now()
+                ]);
+
             return redirect()
                 ->route('kos.list')
-                ->with([
-                    'success' => 'New post has been created successfully'
-                ]);
-        } else {
+                ->with(['success' => 'Data berhasil diperbarui']);
+        } catch (\Exception $e) {
             return redirect()
                 ->back()
                 ->withInput()
-                ->with([
-                    'error' => 'Some problem occurred, please try again'
-                ]);
+                ->with(['error' => 'Terjadi kesalahan, silakan coba lagi']);
         }
     }
+
 
     /**
      * Remove the specified resource from storage.

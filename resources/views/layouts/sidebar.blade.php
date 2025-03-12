@@ -5,19 +5,19 @@
     <div class="navbar-brand-box">
         <a href="{{url('/dashboard')}}" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="{{ URL::asset('/assets/images/kotaklogo.png') }}" alt="" height="30">
+                <img src="{{ URL::asset('/assets/images/logo-kos.png') }}" alt="" height="50">
             </span>
             <span class="logo-lg">
-                <img src="{{ URL::asset('/assets/images/logolight.png') }}" alt="" height="80">
+                <img src="{{ URL::asset('/assets/images/logo-kos.png') }}" alt="" height="80">
             </span>
         </a>
 
         <a href="{{url('/dashboard')}}" class="logo logo-light">
             <span class="logo-sm">
-                <img src="{{ URL::asset('/assets/images/kotaklogo.png') }}" alt="" height="30">
+                <img src="{{ URL::asset('/assets/images/logo-kos.png') }}" alt="" height="50">
             </span>
             <span class="logo-lg">
-                <img src="{{ URL::asset('/assets/images/logodark.png') }}" alt="" height="80">
+                <img src="{{ URL::asset('/assets/images/logo-kos.png') }}" alt="" height="80">
             </span>
         </a>
     </div>

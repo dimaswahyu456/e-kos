@@ -4,4 +4,4 @@
 <meta content="E-Kos" name="description" />
 <meta content="SobatWeb" name="author" />
 <!-- App favicon -->
-<link rel="shortcut icon" href="{{ URL::asset('assets/images/kotaklogo.png')}}">
+<link rel="shortcut icon" href="{{ URL::asset('assets/images/logo-kos.png')}}">

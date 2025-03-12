@@ -67,10 +67,16 @@
               <br><br>
               <label for="example-text-input" class="col-md-2 col-form-label">Tanggal Masuk : </label>
               <div class="col-md-10">
-                <div class="input-group" id="datepicker1">
-                  <input type="text" class="form-control" placeholder="yyyy-mm-dd" data-date-format="yyyy-mm-dd" data-date-container='#datepicker1' data-provide="datepicker" name="tgl_masuk">
-                  <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                </div>
+                <input class="form-control" type="date" name="tgl_masuk" value="{{ old('tgl_masuk') }}" id="example-date-input" placeholder="" required>
+              </div>
+              <br><br>
+              <label for="example-text-input" class="col-md-2 col-form-label">Kos : </label>
+              <div class="col-md-10">
+                <select name="id_kos" id="userSelectCategory" class="form-select" aria-label="Floating label select">
+                  @foreach ($res_kos as $item)
+                  <option value="{{$item->id}}">{{$item->nama_kos}}</option>
+                  @endforeach
+                </select>
               </div>
             </div>
             <div class="pull-right">

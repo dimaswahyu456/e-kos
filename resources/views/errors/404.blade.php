@@ -20,9 +20,9 @@
                             </div>
                         </div>
                         <h4 class="text-uppercase mt-4">Sorry, page not found</h4>
-                        <p class="text-muted">It will be as simple as Occidental in fact, it will be Occidental</p>
+                        <p class="text-muted">Maaf yaa lagi kosong kak :)</p>
                         <div class="mt-5">
-                            <a class="btn btn-primary waves-effect waves-light" href="{{ url('/dashboard') }}">Back to
+                            <a class="btn btn-primary waves-effect waves-light" href="{{ url('/') }}">Back to
                                 Dashboard</a>
                         </div>
                     </div>

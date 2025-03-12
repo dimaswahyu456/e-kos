@@ -8,19 +8,19 @@
 </head>
 <body>
   <div class="container mt-5">
-    <h1 class="text-center mb-4">Detail Kamar 2</h1>
+    <h1 class="text-center mb-4">Detail Kamar 3</h1>
     
     <!-- Carousel Foto Kamar -->
     <div id="carouselKamar" class="carousel slide mb-4" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../assets/img/kamar2.jpg" class="d-block w-100 rounded" alt="Kamar 1">
+          <img src="{{ URL::asset('/assets/guest/img/kamar.jpg)}}" class="d-block w-100 rounded" alt="Kamar 1">
         </div>
         <div class="carousel-item">
-          <img src="../assets/img/mejakursi.jpg" class="d-block w-100 rounded" alt="Kamar 2">
+          <img src="{{ URL::asset('/assets/guest/img/lemari.jpg)}}" class="d-block w-100 rounded" alt="Kamar 2">
         </div>
         <div class="carousel-item">
-          <img src="../assets/img/lemari.jpg" class="d-block w-100 rounded" alt="Kamar 3">
+          <img src="{{ URL::asset('/assets/guest/img/mejakursi.jpg)}}" class="d-block w-100 rounded" alt="Kamar 3">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselKamar" data-bs-slide="prev">
@@ -46,7 +46,7 @@
           <li class="list-group-item">Akses Wi-Fi kecepatan tinggi</li>
         </ul>
         <p class="card-text mt-3">Kamar ini cocok untuk mahasiswa atau pekerja yang mencari lingkungan nyaman dan fasilitas lengkap di lokasi strategis.</p>
-        <a href="../index.html" class="btn btn-primary">Kembali ke Home</a>
+        <a href="{{url('/')}}" class="btn btn-primary">Kembali ke Home</a>
       </div>
     </div>
   </div>
