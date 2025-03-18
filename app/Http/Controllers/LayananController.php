@@ -141,7 +141,7 @@ class LayananController extends Controller
             return redirect()
                 ->route('layanan.list')
                 ->with([
-                    'success' => 'New post has been created successfully'
+                    'success' => 'New post has been delete successfully'
                 ]);
         } else {
             return redirect()

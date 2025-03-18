@@ -207,7 +207,7 @@ class KosController extends Controller
             return redirect()
                 ->route('kos.list')
                 ->with([
-                    'success' => 'New post has been created successfully'
+                    'success' => 'New post has been delete successfully'
                 ]);
         } else {
             return redirect()
