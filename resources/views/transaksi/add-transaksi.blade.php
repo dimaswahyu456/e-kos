@@ -31,56 +31,60 @@
   <div class="col-12">
     <div class="card">
       <div class="card-body">
-        <form action="{{ route('transaksi.add') }}" method="POST">
+      <form id="payment-form">
           @csrf
+          <input type="hidden" id="snap_token" name="snap_token">
+          
           <div class="mb-3 row">
-            <label for="example-text-input" class="col-md-2 col-form-label">Kode Transaksi : </label>
-            <div class="col-md-10">
-              <input class="form-control" type="text" name="code_transaksi" id="code_transaksi" value="{{ $code_transaksi }}" placeholder="Kode Transaksi" readonly>
-            </div>
-            <br><br>
-            <label for="example-text-input" class="col-md-2 col-form-label">Kos : </label>
-            <div class="col-md-10">
-              <select name="id_kos" id="userSelectCategory" class="form-select" aria-label="Floating label select">
-                @foreach ($res_kos as $item)
-                <option value="{{$item->id}}">{{$item->nama_kos}}</option>
-                @endforeach
-              </select>
-            </div>
-            <br><br>
-            <label for="example-text-input" class="col-md-2 col-form-label">Nama Pelanggan : </label>
-            <div class="col-md-10">
-              <input class="form-control" type="text" name="nama" value="{{ old('nama') }}" id="example-text-input" placeholder="Nama Pelanggan">
-            </div>
-            <br><br>
-            <label for="example-text-input" class="col-md-2 col-form-label">Email : </label>
-            <div class="col-md-10">
-              <input class="form-control" type="text" name="email" value="{{ old('email') }}" id="example-text-input" placeholder="Email">
-            </div>
-            <br><br>
-            <label for="example-text-input" class="col-md-2 col-form-label">No Telpon : </label>
-            <div class="col-md-10">
-              <input class="form-control" type="text" name="no_telp" value="{{ old('no_telp') }}" id="example-text-input" placeholder="No Telpon">
-            </div>
-            <br><br>
-            <label for="example-text-input" class="col-md-2 col-form-label">Payment Status : </label>
-            <div class="col-md-10">
-              <input class="form-control" type="text" name="payment_status" value="{{ old('payment_status') }}" id="example-text-input" placeholder="Payment Status">
-            </div>
-            <br><br>
-            <label for="example-text-input" class="col-md-2 col-form-label">Total Amount : </label>
-            <div class="col-md-10">
-              <input class="form-control" type="text" name="total_amount" value="{{ old('total_amount') }}" id="example-text-input" placeholder="Total Amount">
-            </div>
-            <br><br>
-            <label for="example-text-input" class="col-md-2 col-form-label">Tanggal Transaksi : </label>
-            <div class="col-md-10">
-              <input class="form-control" type="date" name="transaction_date" value="{{ old('transaction_date') }}" id="example-date-input" placeholder="" required>
-            </div>
+              <label class="col-md-2 col-form-label">Kode Transaksi :</label>
+              <div class="col-md-10">
+                  <input class="form-control" type="text" name="code_transaksi" id="code_transaksi" value="{{ $code_transaksi }}" readonly>
+              </div>
+              <br><br>
+              
+              <label class="col-md-2 col-form-label">Kos :</label>
+              <div class="col-md-10">
+                  <select name="id_kos" id="id_kos" class="form-select">
+                      @foreach ($res_kos as $item)
+                      <option value="{{ $item->id }}">{{ $item->nama_kos }}</option>
+                      @endforeach
+                  </select>
+              </div>
+              <br><br>
+
+              <label class="col-md-2 col-form-label">Nama :</label>
+              <div class="col-md-10">
+                  <input class="form-control" type="text" name="nama" id="nama" required>
+              </div>
+              <br><br>
+
+              <label class="col-md-2 col-form-label">Email :</label>
+              <div class="col-md-10">
+                  <input class="form-control" type="email" name="email" id="email" required>
+              </div>
+              <br><br>
+
+              <label class="col-md-2 col-form-label">No Telpon :</label>
+              <div class="col-md-10">
+                  <input class="form-control" type="text" name="no_telp" id="no_telp" required>
+              </div>
+              <br><br>
+
+              <label class="col-md-2 col-form-label">Total Amount :</label>
+              <div class="col-md-10">
+                  <input class="form-control" type="number" name="total_amount" id="total_amount" required>
+              </div>
+              <br><br>
+
+              <label class="col-md-2 col-form-label">Tanggal Transaksi :</label>
+              <div class="col-md-10">
+                  <input class="form-control" type="date" name="transaction_date" id="transaction_date" required>
+              </div>
           </div>
+
           <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('payment.list') }}"> Back</a>
-            <button type="submit" class="btn btn-primary">Submit</button>
+              <a class="btn btn-primary" href="{{ route('transaksi.list') }}">Back</a>
+              <button type="button" id="pay-button" class="btn btn-success">Bayar Sekarang</button>
           </div>
         </form>
       </div>
@@ -96,4 +100,50 @@
 <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 <script src="{{ URL::asset('/assets/libs/datepicker/datepicker.min.js') }}"></script>
 <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
+<script>
+    document.getElementById('pay-button').onclick = function(event) {
+        event.preventDefault();
+
+        let formData = {
+            _token: "{{ csrf_token() }}",
+            code_transaksi: document.getElementById('code_transaksi').value,
+            nama: document.getElementById('nama').value,
+            email: document.getElementById('email').value,
+            no_telp: document.getElementById('no_telp').value,
+            total_amount: document.getElementById('total_amount').value,
+            id_kos: document.getElementById('id_kos').value,
+            transaction_date: document.getElementById('transaction_date').value
+        };
+
+        fetch("{{ route('transaksi.store') }}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-TOKEN": "{{ csrf_token() }}"
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.snap_token) {
+                snap.pay(data.snap_token, {
+                    onSuccess: function(result) {
+                        alert("Pembayaran berhasil!");
+                        window.location.href = "{{ route('transaksi.list') }}";
+                    },
+                    onPending: function(result) {
+                        alert("Menunggu pembayaran...");
+                    },
+                    onError: function(result) {
+                        alert("Pembayaran gagal!");
+                    }
+                });
+            } else {
+                alert("Terjadi kesalahan saat membuat transaksi.");
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    };
+</script>
 @endsection

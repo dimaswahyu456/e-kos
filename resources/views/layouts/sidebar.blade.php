@@ -59,6 +59,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href={{ route('payment.list') }}>@lang('Data Payment')</a></li>
+                        <li><a href={{ route('transaksi.list') }}>@lang('Data Transaksi')</a></li>
                     </ul>
                 </li>
                 <li>

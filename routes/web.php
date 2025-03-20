@@ -10,6 +10,7 @@ use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\KosController;
+use App\Http\Controllers\TransaksiController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,12 @@ Route::post('/auth', [AuthController::class, 'auth']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/setting', [AuthController::class, 'setting']);
 Route::post('/edituser', [AuthController::class, 'edituser']);
+
+Route::get('transaksi', [TransaksiController::class, 'index'])->name('transaksi.list');
+Route::get('transaksi/add', [TransaksiController::class, 'create'])->name('transaksi.create');
+Route::post('/transaksi/store', [TransaksiController::class, 'store'])->name('transaksi.store');
+Route::post('/midtrans/notification', [TransaksiController::class, 'notificationHandler']);
+Route::get('transaksi/delete/{id}', [TransaksiController::class, 'destroy'])->name('transaksi.destroy');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

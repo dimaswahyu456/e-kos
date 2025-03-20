@@ -44,25 +44,28 @@
               @foreach ($res_transaksi as $item)
               <tr>
                 <td>{{ $loop->index + 1}}</td>
-                <td>{{ $item->kode_transaksi}}</td>
-                <td>{{ $item->nama_kos}}</td>
+                <td>{{ $item->code_transaksi}}</td>
+                <td>{{ $item->kos}}</td>
                 <td>{{ $item->nama}}</td>
                 <td>{{ $item->total_amount}}</td>
                 <td>
-                  @if($item->payment_status == 'Success')
+                  @if($item->payment_status == 'paid')
                   <div class="badge bg-pill bg-soft-success font-size-13">{{ $item->payment_status}}
                   </div>
-                  @else
+                  @elseif($item->payment_status == 'pending')
                   <div class="badge bg-pill bg-soft-warning font-size-13">{{ $item->payment_status}}
                   </div>
-                  </td>
+                  @else
+                  <div class="badge bg-pill bg-soft-danger font-size-13">{{ $item->payment_status}}
+                  </div>
+                  @endif
+                </td>
                 <td>
-                  <a class="btn btn-danger" href="{{ route('payment.destroy',$item->id) }}"><i class="uil uil-trash-alt font-size-18"></i></a>
+                  <a class="btn btn-danger" href="{{ route('transaksi.destroy',$item->id) }}"><i class="uil uil-trash-alt font-size-18"></i></a>
                   @csrf
                 </td>
               </tr>
               @endforeach
-
             </tbody>
           </table>
         </div>
